@@ -13,26 +13,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-     let temprandom:Int = Int(arc4random_uniform(100) + 1)
+    var op = 0
+     var temprandom:Int = Int(arc4random_uniform(100) + 1)
     @IBOutlet weak var result: UILabel!
-    
     @IBAction func start(_ sender: Any) {
-        let b = Double(result.text!)!
-        if (Int(b) > temprandom)
-        {
-            end.text = "higner "
-        }
-        else if(Int(b) < temprandom)
-        {
-            end.text = "lower"
-        }
-        else {
-            end.text = "correct "
-        }
-        result.text = " "
+            var b:Int
         
-        
+            b = Int(Double(result.text!)!)
+            if (Int(b) > temprandom)
+            {
+                end.text = "higner "
+            }
+            else if(Int(b) < temprandom)
+            {
+                end.text = "lower"
+            }
+            else {
+                end.text = "correct "
+                temprandom = Int(arc4random_uniform(100) + 1) }
+            result.text = ""
     }
+    
+    
     
     @IBOutlet weak var end: UILabel!
     
