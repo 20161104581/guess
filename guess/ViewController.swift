@@ -30,8 +30,9 @@ class ViewController: UIViewController {
             }
             else {
                 end.text = "correct "
-                temprandom = Int(arc4random_uniform(100) + 1) }
-            result.text = ""
+                temprandom = Int(arc4random_uniform(100) + 1)
+        }
+        result.text = ""
     }
     
     
